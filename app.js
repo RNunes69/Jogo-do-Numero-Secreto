@@ -3,7 +3,7 @@ let numeroLimite = 25;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentivas = 1;
 
-console.log(`O numero secreto é  ${numeroSecreto}`)
+console.log(`O número secreto é  ${numeroSecreto}`)
 
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
@@ -13,7 +13,7 @@ function exibirTextoNaTela(tag, texto){
 
 function exibiMensagemIncial(){
     exibirTextoNaTela('h1', 'Jogo do Nunão');
-    exibirTextoNaTela('p', `Escolhe um numero aí, entre 1 e ${numeroLimite}`);
+    exibirTextoNaTela('p', `Descubra o número entre 1 e ${numeroLimite}`);
 }
 
 function verificarChute(){
@@ -21,14 +21,14 @@ function verificarChute(){
     if (chute == numeroSecreto){
        exibirTextoNaTela('h1', 'Você acertou!') 
        let palavraTentativa = tentivas > 1 ? 'tentativas' : 'Tentativa';
-       let mensagemTentativas =  `Você descobriu o numero secreto com ${tentivas} ${palavraTentativa}`;
+       let mensagemTentativas =  `Você descobriu o número secreto com ${tentivas} ${palavraTentativa}`;
        exibirTextoNaTela('p', mensagemTentativas);
        document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute < numeroSecreto){ 
-            exibirTextoNaTela('p', 'O numero é maior')
+            exibirTextoNaTela('p', 'O número é maior')
         }else {
-            exibirTextoNaTela('p', 'O numero é menor')}
+            exibirTextoNaTela('p', 'O número é menor')}
         tentivas ++;
         limparCampo();
     }
